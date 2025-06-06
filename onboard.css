@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f4f7f9;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+#regForm {
+  background: #fff;
+  margin: 60px auto;
+  padding: 50px;
+  width: 60%;
+  min-width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #222;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 25px;
+  border: 1px solid #dcdfe6;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s;
+  background: #fff;
+}
+
+input:focus {
+  border-color: #409eff;
+  box-shadow: 0 0 6px rgba(64, 158, 255, 0.3);
+  outline: none;
+}
+
+input.invalid {
+  background-color: #ffe6e6;
+  border-color: #ff4d4f;
+}
+
+.tab {
+  display: none;
+}
+
+button {
+  background: #409eff;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+button:hover {
+  background: #2a8cd8;
+}
+
+#prevBtn {
+  background-color: #dcdfe6;
+  color: #333;
+}
+
+#prevBtn:hover {
+  background-color: #c0c4cc;
+}
+
+.step {
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #dcdfe6;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.step.active {
+  background-color: #409eff;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.step.finish {
+  background-color: #67c23a;
+  box-shadow: 0 0 6px rgba(103, 194, 58, 0.4);
+}

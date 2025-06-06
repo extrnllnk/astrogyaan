@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="server.js"></script>
+</head>
+<body>
+    <header>
+<header>
+      <nav class="navbar">
+        <div class="logo">AstroGyann</div>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#footer-about">AboutUs</a></li>
+          <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Jyotish Onboard</a></li>
+          <li><a href="#">Free Kundli</a></li>
+          <li><a href="#">Kundli Matching</a></li>
+          <li><a href="#">Daily Horoscope</a></li>
+        </ul>
+      </nav>
+    </header>
+ 
+
+    </header>
+
+<section class="chat-box-section">
+  <div class="chat-content">
+    <h1 class="chat-title">Aapka Saathi ChatBox</h1>
+    <p class="chat-description">
+      Kabhi-kabhi bas kisi se baat kar lena kaafi hota hai. <br />
+      <strong>Aapka Saathi</strong> ek stress-free chat space hai jahan aap apni baat share kar sakte hain — bina kisi judgement ke.<br />
+      Chahe dard ho ya confusion, hum hai sunne ke liye.
+    </p>
+    <!-- Chat start button -->
+    <button onclick="toggleChat()">Start your chat free</button>
+  </div>
+
+  <div class="chat-image">
+    <img src="images/second_chatbox.png" alt="Relax Chat Box" />
+  </div>
+</section>
+
+<!-- Floating Chat Box -->
+<div class="chat-container" id="chat-container" style="display: none;">
+  <div class="chat-header">Aapka Saathi 🤝</div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-input-box">
+    <input type="text" id="user-input" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script>
+  function toggleChat() {
+    const chatBox = document.getElementById("chat-container");
+    if (chatBox.style.display === "none" || chatBox.style.display === "") {
+      chatBox.style.display = "flex"; // 👈 use "flex" if your CSS is using flex
+    } else {
+      chatBox.style.display = "none";
+    }
+  }
+</script>
+
+
+</body>
+</html>

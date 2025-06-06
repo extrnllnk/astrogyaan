@@ -5,145 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Navgraha Pandit</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="onboard.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
-<style>
-* {
-  box-sizing: border-box;
-}
 
-body {
-  background-color: #f1f1f1;
-}
 
-#regForm {
-  background-color: #ffffff;
-  margin: 50px auto;
-  font-family: Raleway;
-  padding: 40px;
-  width: 70%;
-  min-width: 300px;
-}
-
-h1 {
-  text-align: center;  
-}
-
-input {
-  padding: 10px;
-  width: 100%;
-  font-size: 17px;
-  font-family: Raleway;
-  border: 1px solid #aaaaaa;
-}
-
-/* Mark input boxes that gets an error on validation: */
-input.invalid {
-  background-color: #ffdddd;
-}
-
-/* Hide all steps by default: */
-.tab {
-  display: none;
-}
-
-button {
-  background-color: #04AA6D;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 17px;
-  font-family: Raleway;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-#prevBtn {
-  background-color: #bbbbbb;
-}
-
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;  
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
-
-.step.active {
-  opacity: 1;
-}
-
-/* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #04AA6D;
-}
-</style>
 <body>
   <!-- Header -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">AstroGyaan</div>
-      <ul class="nav-links">
-        <li><a href="index.html ">Home</a></li>
-        <li><a href="service.html" >Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-        <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" >Onboard</a></li>
-      </ul>
-    </nav>
-  </header>
-
+  
+ <header>
+      <nav class="navbar">
+        <div class="logo">AstroGyann</div>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#footer-about">AboutUs</a></li>
+          <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Jyotish Onboard</a></li>
+          <li><a href="#">Free Kundli</a></li>
+          <li><a href="#">Kundli Matching</a></li>
+          <li><a href="#">Daily Horoscope</a></li>
+        </ul>
+      </nav>
+    </header>
+  
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-        <div class="text-content">
-            <h1>Where Stars Speak Your Story</h1>
-            <a href="service.html" class="btn">Our Services</a>
-        </div>
-        <img src="images/Untitled.jpg" alt="Religious imagery" class="hero-image">
+    
+        <img src="images/Untitled.jpg" alt="Religious imagery" class="hero-image" width="1633px">
     </div>
 </section>
     
   <!-- Services Section -->
   
-  <!-- About Us Section -->
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>
-    AstroGyaan is an AI-powered astrology and palmistry platform created to make ancient wisdom accessible, affordable, and easy to use for everyone. Whether you're a job seeker seeking career clarity, a working professional looking for personal guidance, a business owner exploring favorable times, or someone from a rural background searching for genuine spiritual support—we’re here for you.
+ 
+  <!-- Services section -->
 
-Through a blend of cutting-edge AI and trusted astrological knowledge, AstroGyaan offers personalized insights in Kundli creation, marriage compatibility (Kundli Milan), palm reading, and live consultations. Our platform is currently available on Instagram, with a fully featured website and APK in development—launching soon.
+<section id="services" class="services">
+    <h2>Services</h2>
+    <div class="service-grid">
+      <div class="service-box">
+        <img src="images/pamm.png" alt="Palm Reading">
+        <h3>Palm Reading</h3>
+          <p>Abhi Upload kre Apne ki Photo jaane apna bhavishya ek click m .</p>
 
-We believe that spirituality should be convenient, secure, and available 24/7. That’s why AstroGyaan brings spiritual guidance directly to your fingertips—anytime, anywhere.
-
-Coming Soon:
-Our team is actively working on exciting new features, including Pandit booking for poojas, expanded video consultations, and a full-featured multilingual experience—so stay connected.
-
-
-        
-    </p>
-  </section>
-
-  <!-- Gallery Section -->
-  <section id="gallery" class="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-      <img src="images/fbea0218-aa40-4eca-b347-0a6845bd7b59.jpg" alt="Gallery 1">
-      <img src="images/ChatGPT Image Jun 2, 2025, 11_28_22 PM.png" alt="Gallery 2">
-      <img src="images/b1c68a23-187d-4fd3-a454-461dce4feabc.jpg" alt="Gallery 3">
+        <a href="palm.html" class="btn-small">Click For Palm Reading</a>
+      </div>
+      <div class="service-box">
+        <img src="images/Chatbox.png" alt="Aapka Saathi">
+        <h3>Aapka Saathi ChatBox</h3>
+        <p>Stress ho ya life ka confusion — solution milega Aapka sathi pe</p>
+        <a href="chatbox.html" class="btn-small">Start Your chat</a>
+      </div>
+      <div class="service-box">
+        <img src="images/bookpooja.png" alt="Book Pandit now">
+        <h3>Get Puja done at home, book Pandit now </h3>
+        <p>Pooja ka samaan ho ya pandit ji abhi Book kro </p>
+        <a href="#" class="btn-small">Enquire Now</a>
+      </div>
+      <div class="service-box">
+        <img src="images/store.png" alt="AstroMart">
+        <h3>AstroMart</h3>
+        <p>Pooja ka samaan ho ya kundli ka gyaan — sab milega AstroMart pe</p>
+        <a href="#contact" class="btn-small">Enquire Now</a>
+      </div>
     </div>
   </section>
+
+
+
 
   <!-- Contact Section -->
 
@@ -226,15 +161,46 @@ Our team is actively working on exciting new features, including Pandit booking 
   </div>
 </div>
   <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="service.html"">Services</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact Us</a>
+  
+
+<!-- footer.html -->
+<footer class="astro-footer">
+  <div class="footer-container">
+    
+    <!-- About Section -->
+    <div id="footer-about" class="#footer-about">
+    <h3>About AstroGyann</h3>
+      <p>AstroGyaan is a human + AI-powered platform offering palm readings, kundli creation & matching, daily horoscopes, and doorstep pooja bookings with nearby pandits — all in one place.
+
+</p>
     </div>
-    <p>&copy; Copyrights 2025 - 2030. AstroGyaan. All Rights Reserved.</p>
-  </footer>
+    
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#services">Services</a></li>
+       <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" >Jyotish Onboard</a></li>
+        <li><a href="/birth-chart">Birth Chart</a></li>
+        <li><a href="/blog">Astrology Blog</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+    
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:contact@starscope.com">Astrogyaan@gmail.com</a></p>
+      <p>Phone: +1 0000000000</p>
+      <p>Address: Dummy 123</p>
+    </div>
+    
+  </div>
+</footer>
+
+
+
+
   <script>
     var exampleModal = document.getElementById('exampleModal')
 exampleModal.addEventListener('show.bs.modal', function (event) {
@@ -316,6 +282,8 @@ function validateForm() {
   }
   return valid; // return the valid status
 }
+
+
 
 function fixStepIndicator(n) {
   // This function removes the "active" class of all steps...
