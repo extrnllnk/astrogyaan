@@ -86,29 +86,78 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
+        <h2>Jyotish Onboard</h2>
         <!-- <h5 class="modal-title" id="exampleModalLabel">New message</h5> -->
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form id="regForm" action="/action_page.php">
-      <h1>Register:</h1>
       <!-- One "tab" for each step in the form: -->
-      <div class="tab">Name:
-        <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
-        <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p>
+      <div class="tab">
+        <h4>Basic Information:</h4>
+        <p><input type="text" placeholder="Full name*" oninput="this.className = ''" name="fullname"></p>
+        <p><input type="date" placeholder="Date of Birth*" oninput="this.className = ''" name="dob"></p>
+        <p><input type="text" placeholder="Gender*" oninput="this.className = ''" name="gender"></p>
+        <p><input placeholder="Photo Upload" type="file" oninput="this.className = ''" name="photo"></p>
+        <p><input placeholder="Aadhaar Number" oninput="this.className = ''" name="aadhaar"></p>
       </div>
-      <div class="tab">Contact Info:
-        <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
-        <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
+      <div class="tab">
+        <h4>Contact Information:</h4>
+        <p>
+          <input placeholder="Mobile Number *" max="10"
+            min="10"
+            oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
+            name="mobile" id="mobile" value="" type="text">
+        </p>
+        <p>
+          <input placeholder="Alternate Contact Number *" max="10"
+            min="10"
+            oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
+            name="alternate_mobile" id="alternate_mobile" value="" type="text">
+        </p>
+        <p><input placeholder="Email Address" oninput="this.className = ''" name="email"></p>
+        <p><input placeholder="Residential Address" oninput="this.className = ''" name="address"></p>
+        <p><input placeholder="City / Area of Service Coverage" oninput="this.className = ''" name="area_of_service"></p>
       </div>
-      <div class="tab">Birthday:
-        <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-        <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-        <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
+      <div class="tab">
+        <h4>Religious and Professional Details:</h4>
+        <p><input placeholder="Years of Experience as a Pandit" oninput="this.className = ''" name="years_of_experience"></p>
+        <p><input placeholder="Languages Spoken" oninput="this.className = ''" name="languages_spoken"></p>
+        <p><input placeholder="Types of Poojas Performed" oninput="this.className = ''" name="types_of_poojas"></p>
+        <p><input placeholder="Training / Certification" oninput="this.className = ''" name="training_certification"></p>
       </div>
-      <div class="tab">Login Info:
-        <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
-        <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
+      <div class="tab">
+        <h4>Availability:</h4>
+        <p><input placeholder="Days Available (e.g., Mon–Sun)" oninput="this.className = ''" name="days_available"></p>
+        <p><input placeholder="Preferred Time Slots (Morning, Afternoon, Evening)" oninput="this.className = ''" name="preferred_time_slots"></p>
+      </div>
+      <div class="tab">
+        <h4>Logistics:</h4>
+        <p><input placeholder="Do you own a vehicle? (Yes/No)" oninput="this.className = ''" name="vehicle"></p>
+        <p><input placeholder="Willing to travel? (Yes/No)" oninput="this.className = ''" name="willing_to_travel"></p>
+        <p><input placeholder="Distance Willing to Travel (in km)" oninput="this.className = ''" name="distance_to_travel"></p>
+      </div>
+      <div class="tab">
+        <h4>Charges:</h4>
+        <p><input placeholder="Standard Fee for Common Poojas" oninput="this.className = ''" name="standard_fee"></p>
+        <p><input placeholder="Additional Charges (if any)" oninput="this.className = ''" name="additional_charges"></p>
+        <p><input placeholder="Distance Willing to Travel (in km)" oninput="this.className = ''" name="distance_to_travel"></p>
+      </div>
+      <div class="tab">
+        <h4>Media for Listing:</h4>
+        <p><input placeholder="Short Bio / About Me" oninput="this.className = ''" name="short_bio"></p>
+        <p><input placeholder="Upload Introduction Video" type="file" oninput="this.className = ''" name="introduction_video"></p>
+      </div>
+      <div class="tab">
+        <h4>Declaration & Consent:</h4>
+        <p>
+          <input type="checkbox" oninput="this.className = ''" id="vehicle1" name="vehicle1" value="I confirm that the information provided is true to the best of my knowledge." required="required">
+          <label for="vehicle1">I confirm that the information provided is true to the best of my knowledge.</label>
+        </p>
+        <p>
+          <input type="checkbox" oninput="this.className = ''" id="vehicle1" name="vehicle1" value="I agree to the terms and conditions." required="required">
+          <label for="vehicle1">I agree to the terms and conditions.</label>
+        </p>
       </div>
       <div style="overflow:auto;">
         <div style="float:right;">
@@ -118,6 +167,10 @@
       </div>
       <!-- Circles which indicates the steps of the form: -->
       <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
         <span class="step"></span>
         <span class="step"></span>
         <span class="step"></span>
@@ -224,10 +277,10 @@ var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
 function showTab(n) {
-  // This function will display the specified tab of the form...
+  // This function will display the specified tab of the form
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
-  //... and fix the Previous/Next buttons:
+  // and fix the Previous/Next buttons:
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
@@ -238,7 +291,7 @@ function showTab(n) {
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
-  //... and run a function that will display the correct step indicator:
+  // and run a function that will display the correct step indicator:
   fixStepIndicator(n)
 }
 
@@ -251,9 +304,9 @@ function nextPrev(n) {
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
-  // if you have reached the end of the form...
+  // if you have reached the end of the form
   if (currentTab >= x.length) {
-    // ... the form gets submitted:
+    //  the form gets submitted:
     document.getElementById("regForm").submit();
     return false;
   }
@@ -268,7 +321,7 @@ function validateForm() {
   y = x[currentTab].getElementsByTagName("input");
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
-    // If a field is empty...
+    // If a field is empty
     if (y[i].value == "") {
       // add an "invalid" class to the field:
       y[i].className += " invalid";
@@ -286,12 +339,12 @@ function validateForm() {
 
 
 function fixStepIndicator(n) {
-  // This function removes the "active" class of all steps...
+  // This function removes the "active" class of all steps
   var i, x = document.getElementsByClassName("step");
   for (i = 0; i < x.length; i++) {
     x[i].className = x[i].className.replace(" active", "");
   }
-  //... and adds the "active" class on the current step:
+  // and adds the "active" class on the current step:
   x[n].className += " active";
 }
 </script>
