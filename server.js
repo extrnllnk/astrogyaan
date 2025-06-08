@@ -1,40 +1,43 @@
 const express = require("express");
-const fetch = require("node-fetch");
+const axios = require("axios"); // Replace node-fetch with axios
 const cors = require("cors");
 
 const app = express();
 const PORT = 3000;
 
+// ✅ Use your DeepSeek/OpenAI API key here
+const AI_API_KEY = "sk-258bdef8911e4c82a92c4bd901d0d5e4"; 
+const AI_API_URL = "https://api.deepseek.com/v1/chat/completions"; // Example endpoint
+
 app.use(cors());
 app.use(express.json());
-
-const API_KEY = "AIzaSyCAfcYo2oBKC4mMDgAxAqKV1YqXzYcOA34"; // 🔁 Replace with your real Gemini API key
 
 app.post("/chat", async (req, res) => {
   const userMessage = req.body.message;
 
   try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: userMessage }] }]
-        })
+    const response = await axios.post(AI_API_URL, {
+      model: "gpt-3.5-turbo",
+      messages: [{ role: "user", content: userMessage }],
+      temperature: 0.7
+    }, {
+      headers: {
+        "Authorization": `Bearer ${AI_API_KEY}`,
+        "Content-Type": "application/json"
       }
-    );
+    });
 
-    const data = await response.json();
-    const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, no reply received.";
+    const aiReply = response.data.choices[0].message.content;
+    res.json({ reply: aiReply });
 
-    res.json({ reply });
-  } catch (error) {
-    console.error("Error from Gemini API:", error);
-    res.status(500).json({ error: "Something went wrong." });
+  } catch (err) {
+    console.error("API Error:", err.response?.data || err.message);
+    res.status(500).json({ 
+      reply: "Sorry, I couldn't process your request. Please try again."
+    });
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`✅ Server is running at http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });

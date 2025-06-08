@@ -1,32 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="server.js"></script>
+  <meta charset="UTF-8" />
+  <title>Aapka Saathi ChatBox</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
 </head>
 <body>
-    <header>
-<header>
-      <nav class="navbar">
-        <div class="logo">AstroGyann</div>
-        <div class="menu-toggle" id="mobile-menu">☰</div>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#footer-about">AboutUs</a></li>
-          <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Jyotish Onboard</a></li>
-          <li><a href="#">Free Kundli</a></li>
-          <li><a href="#">Kundli Matching</a></li>
-          <li><a href="#">Daily Horoscope</a></li>
-        </ul>
-      </nav>
-    </header>
- 
-
-    </header>
 
 <section class="chat-box-section">
   <div class="chat-content">
@@ -37,7 +17,7 @@
       Chahe dard ho ya confusion, hum hai sunne ke liye.
     </p>
     <!-- Chat start button -->
-    <button onclick="toggleChat()">Start your chat free</button>
+    <button id="start-chat-btn">Start your chat free</button>
   </div>
 
   <div class="chat-image">
@@ -51,21 +31,11 @@
   <div class="chat-messages" id="chat-messages"></div>
   <div class="chat-input-box">
     <input type="text" id="user-input" placeholder="Type your message..." />
-    <button onclick="sendMessage()">Send</button>
+    <button id="send-btn">Send</button>
   </div>
 </div>
 
-<script>
-  function toggleChat() {
-    const chatBox = document.getElementById("chat-container");
-    if (chatBox.style.display === "none" || chatBox.style.display === "") {
-      chatBox.style.display = "flex"; // 👈 use "flex" if your CSS is using flex
-    } else {
-      chatBox.style.display = "none";
-    }
-  }
-</script>
-
+<script src="script.js"></script>
 
 </body>
 </html>

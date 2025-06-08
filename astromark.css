@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #1a0731, #431c5d);
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  padding: 30px;
+  max-width: 600px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.logo {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffe066;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.message {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #f0f0f0;
+}
+
+.footer {
+  font-size: 1.2rem;
+  margin-top: 40px;
+  color: #ffc300;
+  font-weight: 500;
+}
+
+.animation {
+  position: relative;
+  height: 100px;
+}
+
+.star, .moon {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.star {
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  top: 20px;
+  left: 40%;
+  animation: twinkle 2s infinite;
+}
+
+.moon {
+  width: 60px;
+  height: 60px;
+  background-color: #ffe066;
+  top: 10px;
+  left: 60%;
+  box-shadow: -10px 10px 0 #1a0731;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

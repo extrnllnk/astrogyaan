@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AstroMark - Coming Soon</title>
+  <link rel="stylesheet" href="style.css" />
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+      <nav class="navbar">
+        <div class="logo">AstroGyann</div>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#footer-about">AboutUs</a></li>
+          <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Jyotish Onboard</a></li>
+          <li><a href="#">Free Kundli</a></li>
+          <li><a href="#">Kundli Matching</a></li>
+          <li><a href="#">Daily Horoscope</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+
+    
+  <div class="container">
+    <center><h1 class="logo">🔮 Arriving Soon</h1> 
+     <p class="tagline">A powerful new feature from <strong>AstroGyann</strong> is on the way!</p>
+    <p class="message">We’re working hard to bring you something amazing. <br> Stay connected. Stay with us. 🌟</p>
+    
+    <div class="animation">
+      <div class="star"></div>
+      <div class="moon"></div>
+    </div>
+</center>
+   
+
+  </div>
+
+<script>
+
+    // Simple rotation animation for moon
+window.onload = function () {
+  const moon = document.querySelector('.moon');
+
+  let angle = 0;
+  setInterval(() => {
+    angle += 0.3; // control speed here
+    moon.style.transform = `rotate(${angle}deg)`;
+  }, 30);
+};
+
+</script>
+
+<footer class="astro-footer">
+  <div class="footer-container">
+    
+    <!-- About Section -->
+    <div id="footer-about" class="#footer-about">
+    <h3>About AstroGyann</h3>
+      <p>AstroGyaan is a human + AI-powered platform offering palm readings, kundli creation & matching, daily horoscopes, and doorstep pooja bookings with nearby pandits — all in one place.
+
+Soon, we’re launching AstroMark — a personalized astrology tracker that helps you mark, monitor, and align your life events with celestial insights. Track karmic patterns, get timely astrological alerts, and discover your most auspicious days — powered by AstroGyaan.
+</p>
+    </div>
+    
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#services">Services</a></li>
+       <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" >Jyotish Onboard</a></li>
+        <li><a href="/birth-chart">Birth Chart</a></li>
+        <li><a href="/blog">Astrology Blog</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+    
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:contact@starscope.com">Astrogyaan@gmail.com</a></p>
+      <p>Phone: +1 0000000000</p>
+      <p>Address: Dummy 123</p>
+    </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+</body>
+</html>
