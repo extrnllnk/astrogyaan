@@ -11,6 +11,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
 </head>
 
 <body>
@@ -26,21 +28,23 @@
           <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Jyotish Onboard</a></li>
           <li><a href="kundli_create/kundli_form.html">Free Kundli</a></li>
           <li><a href="#">Kundli Matching</a></li>
-          <li><a href="#">Daily Horoscope</a></li>
+          <li><a href="astrogyaan/templates/panchang.html">Daily Panchang</a></li>
         </ul>
       </nav>
     </header>
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-<<<<<<< HEAD
-    
-        <img src="images/✋ Palm Reading.png" alt="Religious imagery" class="hero-image"" width="">
-=======
-        <img src="images/Untitled.jpg" alt="Religious imagery" class="hero-image" width="1633px">
->>>>>>> b4027529f8c147029363e3b0ebe4af986e9e16d2
-    </div>
+<section class="hero">
+  <div class="slider">
+  <div class="slides">
+    <img src="images/✋ Palm Reading.png" alt="Palm Reading" />
+    <img src="images/Untitled.jpg" alt="Astrology" />
+
+    <!-- Add more images if you want -->
+  </div>
+</div>
+
 </section>
+
 
 <section id="services" class="services">
     <h2>Services</h2>
@@ -542,6 +546,33 @@ console.log(formData);
 
 
 });
+
 </script>
+
+
+<script>
+  const menuToggle = document.getElementById('mobile-menu');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+
+let current = 0;
+const images = document.querySelectorAll('.hero-image');
+
+function slider() {
+  images.forEach(img => img.style.display = 'none');
+  images[current].style.display = 'block';
+  current = (current + 1) % images.length;
+}
+
+setInterval(slider, 10000);  // 3000 milliseconds = 3 seconds
+slider();
+
+
+</script>
+
 </body>
 </html>

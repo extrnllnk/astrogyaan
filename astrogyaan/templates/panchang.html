@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sunrise & Sunset Times (UTC)</title>
+</head>
+<body>
+    <h1>Sunrise & Sunset Times (UTC)</h1>
+
+    <form method="post">
+        <label>Latitude: <input type="text" name="lat" value="{{ lat }}"></label><br>
+        <label>Longitude: <input type="text" name="lng" value="{{ lng }}"></label><br>
+        <label>Date (YYYY-MM-DD): <input type="text" name="date" value="{{ date }}"></label><br>
+        <input type="submit" value="Get Sunrise & Sunset">
+    </form>
+
+    {% if error %}
+        <p style="color:red;">Error: {{ error }}</p>
+    {% endif %}
+
+    {% if sunrise_data %}
+        <h2>Results:</h2>
+        <ul>
+            <li>Sunrise: {{ sunrise_data.sunrise }}</li>
+            <li>Sunset: {{ sunrise_data.sunset }}</li>
+            <li>Solar Noon: {{ sunrise_data.solar_noon }}</li>
+            <li>Day Length: {{ sunrise_data.day_length }}</li>
+            <li>Civil Twilight Begin: {{ sunrise_data.civil_twilight_begin }}</li>
+            <li>Civil Twilight End: {{ sunrise_data.civil_twilight_end }}</li>
+            <li>Nautical Twilight Begin: {{ sunrise_data.nautical_twilight_begin }}</li>
+            <li>Nautical Twilight End: {{ sunrise_data.nautical_twilight_end }}</li>
+            <li>Astronomical Twilight Begin: {{ sunrise_data.astronomical_twilight_begin }}</li>
+            <li>Astronomical Twilight End: {{ sunrise_data.astronomical_twilight_end }}</li>
+        </ul>
+        <p>All times are in UTC.</p>
+    {% endif %}
+</body>
+</html>
+
